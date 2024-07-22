@@ -1,31 +1,24 @@
+h1 {
+  filter: brightness(4);
+  letter-spacing: -0.05em !important;
+  --bs-text-opacity: 1;
+  --bs-dark-rgb: 60, 2, 151;
+  color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
+}
 .banner {
-  margin-left: 12rem;
-  margin-top: 6rem;
-  margin-right: 8rem;
-  border: none;
-  background-color: yellow;
+  background-color: #030008 !important;
 }
 
-.banner-text {
-  font-size: 100px;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 900;
-  line-height: 1;
+.box {
+  width: 40px;
+  height: 40px;
 }
-
-.social-icon {
-  height: 60px;
-  width: 60px;
-  margin: 16px 16px 0px 0px;
-}
-
-.banner-description {
-  margin-top: 30px;
-  font-size: x-large;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  text-align: left;
-  margin-left: 70%;
-  font-weight: 300;
-  line-height: 1.2;
+.banner-description h2 {
+  --bs-body-color: #dee2e6;
+  --bs-light: #8af698;
+  background: linear-gradient(to bottom, var(--bs-body-color), var(--bs-light));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  -webkit-text-stroke: 0.03rem var(--bs-body-color);
 }
