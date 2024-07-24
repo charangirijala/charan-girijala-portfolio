@@ -1,4 +1,4 @@
-import { LightningElement } from "lwc";
+import { api, LightningElement } from "lwc";
 import { loadStyle } from "lightning/platformResourceLoader";
 import Ninjabootstrap from "@salesforce/resourceUrl/Ninjabootstrap";
 
@@ -17,4 +17,10 @@ export default class TrailheadStats extends LightningElement {
         });
     }
   }
+
+  @api trailHeadRankImg;
+
+  @api badges;
+  @api points;
+  @api trails;
 }

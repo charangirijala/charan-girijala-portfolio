@@ -6,4 +6,16 @@
         <target>lightningCommunity__Page</target>
         <target>lightningCommunity__Default</target>
     </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+        name="trailHeadRankImg"
+        label="Trailhead Rank Image"
+        type="String"
+      />
+      <property name="badges" type="String" label="Badges" />
+      <property name="points" type="String" label="Points" />
+      <property name="trails" type="String" label="Trails" />
+        </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>
