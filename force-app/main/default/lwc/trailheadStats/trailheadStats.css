@@ -13,12 +13,13 @@
   color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
 }
 
-.container {
-  --bs-light-rgb: 138, 246, 152;
+.jumbotron {
+  /* --bs-light-rgb: 138, 246, 152;
   background-color: RGBA(
     var(--bs-light-rgb),
     var(--bs-bg-opacity, 1)
-  ) !important;
+  ) !important; */
+  background-color: #030008 !important;
 }
 
 .box-text {
