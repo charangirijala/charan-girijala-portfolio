@@ -1,0 +1,47 @@
+.container {
+  background-color: #030008 !important;
+}
+
+.box-heading {
+  filter: brightness(4);
+  letter-spacing: -0.05em !important;
+  --bs-text-opacity: 1;
+  --bs-dark-rgb: 60, 2, 151;
+  color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
+}
+
+.box-heading .selected {
+  color: antiquewhite;
+}
+
+.lightning-tab {
+  background-color: #030008 !important;
+}
+
+.card {
+  /*   width: 600px; */
+  margin: auto;
+  border: none !important;
+  background-color: #8afc5d !important;
+  filter: brightness(1);
+}
+
+.jumbotron {
+  background-color: #030008 !important;
+}
+
+.company-button {
+  border: none;
+  background-color: transparent;
+  border-left: 3px solid black;
+}
+
+.row {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.col {
+  margin: 0px !important;
+  padding: 0px !important;
+}
