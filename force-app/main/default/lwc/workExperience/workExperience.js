@@ -2,11 +2,6 @@ import { LightningElement, wire } from "lwc";
 import { loadStyle } from "lightning/platformResourceLoader";
 import Ninjabootstrap from "@salesforce/resourceUrl/Ninjabootstrap";
 import { getRelatedListRecords } from "lightning/uiRelatedListApi";
-import WE_NAME from "@salesforce/schema/Work_Experience__c.Name";
-import ORGANIZATION from "@salesforce/schema/Work_Experience__c.Organization__c";
-import START_DATE from "@salesforce/schema/Work_Experience__c.Start_Date__c";
-import END_DATE from "@salesforce/schema/Work_Experience__c.End_Date__c";
-import EXP_SUMMARY from "@salesforce/schema/Work_Experience__c.Experience_Summary__c";
 export default class WorkExperience extends LightningElement {
   records;
   bootStrapLoaded = false;
@@ -25,30 +20,61 @@ export default class WorkExperience extends LightningElement {
   }
 
   @wire(getRelatedListRecords, {
-    ParentRecordId: "a00NS000008ujYzYAI",
-    RelatedListId: "Work_Experience__c",
-    fields: [WE_NAME, ORGANIZATION, START_DATE, END_DATE, EXP_SUMMARY]
+    parentRecordId: "a00NS000008ujYzYAI",
+    relatedListId: "Work_Experiences__r",
+    fields: [
+      "Work_Experience__c.Name",
+      "Work_Experience__c.Organization__c",
+      "Work_Experience__c.Start_Date__c",
+      "Work_Experience__c.End_Date__c",
+      "Work_Experience__c.Experience_Summary__c"
+    ]
   })
   weList({ error, data }) {
     if (data) {
       this.records = data.records;
+      //console.log(this.records);
     } else if (error) {
-      console.log("Error fetching Related List Work_Experience__c", error);
+      console.log(
+        "Error fetching Related List Work_Experiences__r-->",
+        error.body.message
+      );
     }
   }
-  NUM_OF_TABS = 3;
+
+  //prepare all data in tabs array to use in lighting-tab
   tabs = [];
   get tabData() {
-    for (let i = 0; i < this.NUM_OF_TABS; i++) {
-      this.tabs.push({
-        value: `${i}`,
-        label: `Item ${i}`,
-        content: `Tab Content ${i}`
+    if (this.records != null) {
+      this.records.forEach((workExp) => {
+        this.tabs.push({
+          value: `${workExp.fields.Organization__c.value}`,
+          label: `${workExp.fields.Organization__c.value}`,
+          content: this.getSummaryList(
+            workExp.fields.Experience_Summary__c.value
+          ),
+          role: "Salesforce Developer"
+        });
       });
     }
     return this.tabs;
   }
 
+  //function to extract points from experience summary
+  getSummaryList(data) {
+    if (data == null) {
+      return null;
+    }
+    data = data.replaceAll("</li>", "");
+    data = data.replace("<li>", "");
+    data = data.replaceAll("<ul>", "");
+    data = data.replaceAll("</ul>", "");
+    //console.log(data);
+    const weSummary = data.split("<li>");
+    return weSummary;
+  }
+
+  //handle the styling and functionality of active tab
   handleActive() {
     console.log("Tab active");
   }

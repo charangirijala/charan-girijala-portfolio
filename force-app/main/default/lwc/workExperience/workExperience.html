@@ -6,98 +6,20 @@
         <span>{</span>My Experience_ <span>}</span>
       </h1>
     </div>
-    <!-- <div class="card ms-10 me-10 bg-danger-500 pt-3 pb-2">
-      <div
-        class="position-absolute top-0 start-0 h-100 w-100"
-        style="
-          background-image: linear-gradient(
-              90deg,
-              rgba(var(--bs-body-color-rgb), 0.2) 1px,
-              transparent 0
-            ),
-            linear-gradient(
-              180deg,
-              rgba(var(--bs-body-color-rgb), 0.2) 1px,
-              transparent 0
-            );
-          background-size: 1rem 1rem;
-        "
-      ></div>
-      <div class="row">
-        <div class="company col-4">
-          <div class="row pb-2">
-            <div class="col">
-              <button
-                class="company-button"
-                onclick={buttonHandler}
-                type="button"
-              >
-                <h3 class="text-start">
-                  <span>{</span>London Stock Exchange Group<span>}</span>
-                </h3>
-              </button>
-            </div>
-          </div>
-          <div class="row pb-2">
-            <div class="col">
-              <button class="company-button">
-                <h4><span>{</span>Apple<span>}</span></h4>
-              </button>
-            </div>
-          </div>
-          <div class="row pb-2">
-            <div class="col">
-              <button class="company-button">
-                <h4><span>{</span>Microsoft<span>}</span></h4>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="responsibility col-8">
-          <div class="content">
-            <h2>Software Dev at Google</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-              voluptate iste consequuntur aut labore velit magni atque, facere
-              autem, suscipit, voluptatem numquam vitae alias adipisci delectus
-              minus amet ab qui.
-            </p>
-          </div>
-          <div class="content">
-            <h2>Software Dev at Apple</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-              voluptate iste consequuntur aut labore velit magni atque, facere
-              autem, suscipit, voluptatem numquam vitae alias adipisci delectus
-              minus amet ab qui.
-            </p>
-          </div>
-          <div class="content">
-            <h2>Software Dev at Microsoft</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-              voluptate iste consequuntur aut labore velit magni atque, facere
-              autem, suscipit, voluptatem numquam vitae alias adipisci delectus
-              minus amet ab qui.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <lightning-tabset>
+    <lightning-tabset variant="vertical">
       <template for:each={tabData} for:item="tab">
         <lightning-tab
           label={tab.label}
           key={tab.value}
           value={tab.value}
           onactive={handleActive}
-          >{tab.content}</lightning-tab
-        >
+          class="tab-design"
+          ><h2>{tab.role}</h2>
+          <template for:each={tab.content} for:item="point">
+            <p key={point} class="exp-points">{point}</p>
+          </template>
+        </lightning-tab>
       </template>
     </lightning-tabset>
-
-    <template for:each={records} for:item="rec">
-      <p key={rec.fields.Id.value}>{rec.fields.Name.value}</p>
-    </template>
   </div>
 </template>
