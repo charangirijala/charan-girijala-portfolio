@@ -25,9 +25,10 @@ export default class WorkExperience extends LightningElement {
     fields: [
       "Work_Experience__c.Name",
       "Work_Experience__c.Organization__c",
-      "Work_Experience__c.Start_Date__c",
-      "Work_Experience__c.End_Date__c",
-      "Work_Experience__c.Experience_Summary__c"
+      "Work_Experience__c.Duration__c",
+      "Work_Experience__c.Experience_Summary__c",
+      "Work_Experience__c.Role__c",
+      "Work_Experience__c.Duration__c"
     ]
   })
   weList({ error, data }) {
@@ -53,7 +54,8 @@ export default class WorkExperience extends LightningElement {
           content: this.getSummaryList(
             workExp.fields.Experience_Summary__c.value
           ),
-          role: "Salesforce Developer"
+          role: `${workExp.fields.Role__c.value}`,
+          duration: `${workExp.fields.Duration__c.value}`
         });
       });
     }

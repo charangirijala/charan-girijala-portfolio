@@ -1,6 +1,6 @@
 <!-- sldsValidatorIgnore -->
 <template>
-  <div class="container pb-2">
+  <!-- <div class="pb-2">
     <div class="box-heading">
       <h1 class="display-3 fw-semibold m-0 pb-2">
         <span>{</span>My Experience_ <span>}</span>
@@ -15,11 +15,53 @@
           onactive={handleActive}
           class="tab-design"
           ><h2>{tab.role}</h2>
+          <h6>{tab.duration}</h6>
           <template for:each={tab.content} for:item="point">
             <p key={point} class="exp-points">{point}</p>
           </template>
         </lightning-tab>
       </template>
     </lightning-tabset>
+  </div> -->
+  <div class="slds-grid slds-grid_align-center">
+    <div class="slds-col slds-small-size_12-of-12 slds-large-size_11-of-12">
+      <div class="cards-container" style="position: relative">
+        <div class="card-1">
+          <h1 class="more-details-header">More about me:)</h1>
+          <p class="more-details-content">
+            Hello! My name is Brittany and I enjoy creating things that live on
+            the internet. My interest in web development started back in 2012
+            when I decided to try editing custom Tumblr themes — turns out
+            hacking together a custom reblog button taught me a lot about HTML &
+            CSS!
+            <br />
+            <br />Fast-forward to today, and I’ve had the privilege of working
+            at an advertising agency, a start-up, a huge corporation, and a
+            student-led design studio. My main focus these days is building
+            accessible, inclusive products and digital experiences at
+            Upstatement for a variety of clients. <br />
+            <br />I also recently launched a course that covers everything you
+            need to build a web app with the Spotify API using Node & React.
+          </p>
+        </div>
+        <div class="card-2">
+          <lightning-tabset variant="vertical">
+            <template for:each={tabData} for:item="tab">
+              <lightning-tab
+                label={tab.label}
+                key={tab.value}
+                value={tab.value}
+                onactive={handleActive}
+                ><h2 class="role">{tab.role}</h2>
+                <span class="duration">{tab.duration}</span>
+                <template for:each={tab.content} for:item="point">
+                  <p key={point}><span class="exp-points">{point}</span></p>
+                </template>
+              </lightning-tab>
+            </template>
+          </lightning-tabset>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
