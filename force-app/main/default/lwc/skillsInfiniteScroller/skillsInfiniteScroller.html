@@ -1,0 +1,26 @@
+<template>
+  <div class="marquee">
+    <ul class="marquee-content">
+      <template for:each={allSkills} for:item="skill">
+        <li key={skill.fields.Name.value}>
+          <div class="box">
+            <div
+              class="slds-grid slds-grid_vertical-align-center slds-var-p-around_medium"
+            >
+              <div class="slds-col">
+                <div class="skill-image">
+                  <img src={skill.fields.Svg_Image__c.value} alt="" />
+                </div>
+              </div>
+              <div class="slds-col slds-var-p-around_small">
+                <span class="skill-name">{skill.fields.Name.value}</span>
+                <div class="proficiency">
+                  <div class={skill.Skill_Confidence__c_ID}></div>
+                </div>
+              </div>
+            </div>
+          </div></li
+      ></template>
+    </ul>
+  </div>
+</template>

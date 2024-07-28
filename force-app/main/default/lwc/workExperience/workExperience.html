@@ -1,28 +1,5 @@
 <!-- sldsValidatorIgnore -->
 <template>
-  <!-- <div class="pb-2">
-    <div class="box-heading">
-      <h1 class="display-3 fw-semibold m-0 pb-2">
-        <span>{</span>My Experience_ <span>}</span>
-      </h1>
-    </div>
-    <lightning-tabset variant="vertical">
-      <template for:each={tabData} for:item="tab">
-        <lightning-tab
-          label={tab.label}
-          key={tab.value}
-          value={tab.value}
-          onactive={handleActive}
-          class="tab-design"
-          ><h2>{tab.role}</h2>
-          <h6>{tab.duration}</h6>
-          <template for:each={tab.content} for:item="point">
-            <p key={point} class="exp-points">{point}</p>
-          </template>
-        </lightning-tab>
-      </template>
-    </lightning-tabset>
-  </div> -->
   <div class="slds-grid slds-grid_align-center">
     <div class="slds-col slds-small-size_12-of-12 slds-large-size_11-of-12">
       <div class="cards-container" style="position: relative">
@@ -63,5 +40,9 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div>
+    <c-skills-infinite-scroller></c-skills-infinite-scroller>
   </div>
 </template>
