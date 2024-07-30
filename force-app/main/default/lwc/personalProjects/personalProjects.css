@@ -1,0 +1,46 @@
+.main-project {
+  min-height: 600px;
+  background-size: cover;
+  background-position-x: center;
+  background-clip: content-box;
+}
+
+.header {
+  filter: brightness(4);
+  letter-spacing: -0.05em !important;
+  --bs-text-opacity: 1;
+  --bs-dark-rgb: 60, 2, 151;
+  color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
+}
+
+.heading {
+  color: white;
+  font-weight: 700;
+  font-stretch: extra-expanded;
+}
+.tech-tag {
+  padding: 3px;
+  margin: 3px;
+  display: inline-block;
+  font-weight: 700;
+  --bs-text-opacity: 1;
+  --bs-dark-rgb: 60, 2, 151;
+  --bs-light-rgb: 138, 246, 152;
+  background-color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
+  color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
+}
+
+.wrapper {
+  width: 100vw;
+  background-color: black;
+}
+
+.project-summary span {
+  font-stretch: semi-expanded;
+  font-weight: 400;
+  color: white;
+}
+
+.side-projects {
+  /* border: 1px solid white; */
+}
