@@ -7,5 +7,7 @@ export default class PersonalProjects extends LightningElement {
   renderedCallback() {
     const mainProject = this.template.querySelector(".main-project");
     mainProject.style.backgroundImage = `url('${UNSPLASH_IMG}')`;
+    const sideProjects = this.template.querySelector(".side-projects");
+    sideProjects.style.backgroundImage = `url('${UNSPLASH_IMG}')`;
   }
 }

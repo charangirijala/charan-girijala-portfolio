@@ -1,0 +1,22 @@
+.heading {
+  color: white;
+  font-weight: 700;
+  font-stretch: extra-expanded;
+}
+.tech-tag {
+  padding: 3px;
+  margin: 3px;
+  display: inline-block;
+  font-weight: 700;
+  --bs-text-opacity: 1;
+  --bs-dark-rgb: 60, 2, 151;
+  --bs-light-rgb: 138, 246, 152;
+  background-color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
+  color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
+}
+
+.project-summary span {
+  font-stretch: semi-expanded;
+  font-weight: 400;
+  color: white;
+}
