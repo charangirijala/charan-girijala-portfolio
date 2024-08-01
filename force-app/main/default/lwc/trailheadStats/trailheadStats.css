@@ -13,15 +13,6 @@
   color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
 }
 
-.jumbotron {
-  /* --bs-light-rgb: 138, 246, 152;
-  background-color: RGBA(
-    var(--bs-light-rgb),
-    var(--bs-bg-opacity, 1)
-  ) !important; */
-  background-color: #030008 !important;
-}
-
 .box-text {
   --bs-light-rgb: 138, 246, 152;
   color: RGBA(var(--bs-light-rgb), var(--bs-bg-opacity, 1)) !important;
@@ -34,4 +25,9 @@
   --bs-light-rgb: 138, 246, 152;
   background-color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
   color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
+}
+
+img {
+  width: 50px;
+  height: 300px;
 }

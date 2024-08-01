@@ -1,15 +1,21 @@
 <!-- Master template where all the LWC components are combined and aligned properly -->
 
 <template>
-  <c-portfolio-banner
-    tr-record-id={recordId}
-    tr-linkedin-url={linkedinUrl}
-    tr-github-url={githubUrl}
-    tr-twitter-url={twitterUrl}
-    tr-trailhead-url={trailheadUrl}
-  ></c-portfolio-banner>
+  <div class="wrapper">
+    <c-portfolio-banner
+      tr-record-id={recordId}
+      tr-linkedin-url={linkedinUrl}
+      tr-github-url={githubUrl}
+      tr-twitter-url={twitterUrl}
+      tr-trailhead-url={trailheadUrl}
+    ></c-portfolio-banner>
 
-  <c-work-experience></c-work-experience>
+    <c-work-experience></c-work-experience>
 
-  <c-personal-projects></c-personal-projects>
+    <c-personal-projects></c-personal-projects>
+
+    <c-trailhead-stats></c-trailhead-stats>
+
+    <c-built-by-credits></c-built-by-credits>
+  </div>
 </template>
