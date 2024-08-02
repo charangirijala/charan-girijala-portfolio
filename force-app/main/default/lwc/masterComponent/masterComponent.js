@@ -21,5 +21,12 @@ export default class MasterComponent extends LightningElement {
   @api linkedinUrl; // = "https://www.linkedin.com/in/charan-girijala-ba2257233/";
   @api githubUrl; //= "https://github.com/charangirijala";
   @api twitterUrl; //= "https://github.com/charangirijala";
-  @api trailheadUrl;
+  @api trailheadUrl; //trailhead link
+
+  @api trailHeadRanking;
+  @api trailHeadRankImg;
+
+  @api badges;
+  @api points;
+  @api trails;
 }

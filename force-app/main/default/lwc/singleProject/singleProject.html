@@ -1,51 +1,53 @@
+<!-- sldsValidatorIgnore -->
 <template>
   <div class="wrapper">
     <!-- heading and links wrapper -->
-    <div class="slds-grid slds-grid_vertical-align-center">
-      <div class="slds-col">
-        <h3 class="heading">APEX LOG ANALYZER</h3>
-      </div>
-      <div class="slds-col_bump-right">
-        <img
-          src="https://img.icons8.com/?size=60&id=AZOZNnY73haj&format=png&color=000000"
-          alt="github Icon"
-        />
-      </div>
-      <div class="slds-col_bump-right">
-        <img
-          src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/48/FFFFFF/external-share-arrows-pack-tanah-basah-basic-outline-tanah-basah.png"
-          alt="external-share-arrows-pack-tanah-basah-basic-outline-tanah-basah"
-        />
-      </div>
-    </div>
-    <!-- all tech tags wrapper -->
-    <div class="tech-tags">
-      <span class="tech-tag">LWC</span>
-      <span class="tech-tag">Apex</span>
-      <span class="tech-tag">Integration</span>
-      <span class="tech-tag">Javascript</span>
-      <span class="tech-tag">Javascript</span>
-      <span class="tech-tag">Javascript</span>
-    </div>
+    <div class="background-filter">
+      <template lwc:if={projectData}>
+        <div class="slds-grid slds-grid_vertical-align-center">
+          <div class="slds-col">
+            <h3 class="heading">{projectData.fields.Name.value}</h3>
+          </div>
+          <div class="slds-col_bump-right">
+            <template lwc:if={projectData.fields.Github_Link__c.value}>
+              <a href={projectData.fields.Github_Link__c.value} target="_blank">
+                <img
+                  src="https://img.icons8.com/?size=60&id=AZOZNnY73haj&format=png&color=000000"
+                  alt="github Icon" /></a
+            ></template>
+          </div>
+          <div class="slds-col_bump-right">
+            <template lwc:if={projectData.fields.Website_Link__c.value}>
+              <a
+                href={projectData.fields.Website_Link__c.value}
+                target="_blank"
+              >
+                <img
+                  src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/48/FFFFFF/external-share-arrows-pack-tanah-basah-basic-outline-tanah-basah.png"
+                  alt="external-share-arrows-pack-tanah-basah-basic-outline-tanah-basah" /></a
+            ></template>
+          </div>
+        </div>
+        <!-- all tech tags wrapper -->
+        <div class="tech-tags">
+          <template for:each={tagsArr} for:item="tag">
+            <span class="tech-tag" key={tag}>{tag}</span>
+          </template>
+        </div>
 
-    <!-- total description of project wrapper -->
-    <div class="project-summary">
-      <p>
-        <span>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit aut,
-          accusamus totam, earum assumenda illo distinctio nam et tempore omnis
-          perferendis dolorum recusandae exercitationem incidunt voluptatibus
-          facilis. Sed, dolore neque.</span
-        >
-      </p>
-      <p>
-        <span>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ea
-          tenetur harum velit, sint quidem? Vel veniam vero alias accusantium
-          ullam nisi, minus quaerat recusandae qui, corrupti pariatur! Nam,
-          delectus!</span
-        >
-      </p>
+        <!-- total description of project wrapper -->
+        <div class="project-summary">
+          <p>
+            <span>{projectData.fields.Summary_One__c.value} </span>
+          </p>
+          <p>
+            <span>{projectData.fields.Summary_Two__c.value} </span>
+          </p>
+          <p>
+            <span>{projectData.fields.Summary_Three__c.value} </span>
+          </p>
+        </div>
+      </template>
     </div>
   </div>
 </template>

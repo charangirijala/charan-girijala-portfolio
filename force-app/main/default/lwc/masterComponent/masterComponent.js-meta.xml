@@ -14,6 +14,19 @@
             <property name="githubUrl" label="Github Url" type="String" />
             <property name="twitterUrl" label="Twitter Url" type="String" />
             <property name="trailheadUrl" label="Trailhead Url" type="String" />
+            <property
+        name="trailHeadRanking"
+        label="TrailHead Ranking Name"
+        type="String"
+      />
+      <property
+        name="trailHeadRankImg"
+        label="TrailHead Ranking Name"
+        type="String"
+      />
+      <property name="badges" type="String" label="No.of Badges" />
+      <property name="points" type="String" label="Point Count" />
+      <property name="trails" type="String" label="No.of Trails" />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

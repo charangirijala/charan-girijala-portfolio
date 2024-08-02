@@ -3,23 +3,35 @@
     <div class="slds-container_x-large slds-container_center">
       <h1 class="header">Check out some projects:)</h1>
       <div class="slds-grid slds-grid_align-center project-container">
-        <div
-          class="slds-col slds-size_4-of-12 side-projects slds-var-p-around_medium"
-        >
+        <div class="slds-col slds-size_4-of-12 side-projects">
           <div class="slds-grid slds-grid_vertical">
-            <div class="slds-col"><c-single-project></c-single-project></div>
-            <div class="slds-col"><c-single-project></c-single-project></div>
+            <template lwc:if={leftProjectsData}>
+              <template for:each={leftProjectsData} for:item="projectData">
+                <div class="slds-col" key={projectData.id}>
+                  <c-single-project
+                    project-data={projectData}
+                  ></c-single-project>
+                </div>
+              </template>
+            </template>
           </div>
         </div>
         <div
           class="slds-col slds-size_4-of-12 main-project slds-var-p-around_medium"
         >
-          <c-single-project project-data={projectData}></c-single-project>
+          <c-single-project project-data={mainProjectData}></c-single-project>
         </div>
         <div class="slds-col slds-size_4-of-12 side-projects">
           <div class="slds-grid slds-grid_vertical">
-            <div class="slds-col"><c-single-project></c-single-project></div>
-            <div class="slds-col"><c-single-project></c-single-project></div>
+            <template lwc:if={rightProjectsData}>
+              <template for:each={rightProjectsData} for:item="projectData">
+                <div class="slds-col" key={projectData.id}>
+                  <c-single-project
+                    project-data={projectData}
+                  ></c-single-project>
+                </div>
+              </template>
+            </template>
           </div>
         </div>
       </div>

@@ -1,7 +1,14 @@
 .heading {
-  color: white;
+  /* color: white; */
   font-weight: 700;
   font-stretch: extra-expanded;
+  text-transform: uppercase;
+  color: #6335ac !important;
+  filter: brightness(4);
+}
+
+.wrapper {
+  background-size: cover;
 }
 .tech-tag {
   padding: 3px;
