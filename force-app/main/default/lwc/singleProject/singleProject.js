@@ -7,7 +7,10 @@ export default class SingleProject extends LightningElement {
     console.log("Rendered Callback of singleProject: ", this.projectData);
     const wrapper = this.template.querySelector(".wrapper");
     if (this.projectData) {
-      wrapper.style.backgroundImage = `url('${this.projectData.fields.Background_Image__c.value}')`;
+      wrapper.style.backgroundImage = `linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),url('${this.projectData.fields.Background_Image__c.value}')`;
     }
   }
 

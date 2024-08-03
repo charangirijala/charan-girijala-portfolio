@@ -3,12 +3,16 @@
   font-weight: 700;
   font-stretch: extra-expanded;
   text-transform: uppercase;
-  color: #6335ac !important;
-  filter: brightness(4);
+  color: white;
 }
 
+.border-style {
+  /* border: 1px solid white; */
+  padding: 1rem;
+}
 .wrapper {
   background-size: cover;
+  padding: 2rem;
 }
 .tech-tag {
   padding: 3px;

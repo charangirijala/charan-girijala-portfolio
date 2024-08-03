@@ -1,0 +1,36 @@
+.next {
+  filter: brightness(4);
+  letter-spacing: -0.05em !important;
+  --bs-text-opacity: 1;
+  --bs-dark-rgb: 60, 2, 151;
+  color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
+  text-align: center;
+}
+
+.touch {
+  color: #6335ac !important;
+  filter: brightness(4);
+  font-weight: 800 !important;
+  letter-spacing: -0.05em !important;
+  text-align: center;
+  font-size: xx-large;
+  font-stretch: extra-expanded;
+  text-transform: uppercase;
+}
+
+.desc {
+  color: white;
+  text-align: center;
+  font-stretch: semi-expanded;
+  font-weight: 400;
+}
+
+.hi-btn {
+  background-color: black;
+  font-size: xx-large;
+  padding: 1rem;
+  color: #6335ac !important;
+  filter: brightness(4);
+  font-weight: 800 !important;
+  letter-spacing: -0.05em !important;
+}

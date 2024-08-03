@@ -1,54 +1,30 @@
 <!-- sldsValidatorIgnore -->
 <template>
-  <div class="jumbotron banner pt-6 pb-6">
-    <div class="banner-text card card-body bg-dark ms-10 me-8 shadow border">
-      <h1 class="fw-semibold display-1 text-dark">
-        "Hey! I'm<br />
-        <span>{</span>
-        {fullName}<span>}</span>"
-      </h1>
-      <!--     links -->
-      <c-portfolio-icons
-        linked-in={trLinkedinUrl}
-        github={trGithubUrl}
-        twitter={trTwitterUrl}
-        trail-head={trTrailheadUrl}
-      ></c-portfolio-icons>
+  <div
+    class="mandate-p-m-class slds-var-m-top_xx-large slds-var-m-bottom_xx-large"
+  >
+    <div class="slds-container_large slds-container_center">
+      <div class="banner-text card card-body bg-dark shadow border">
+        <h1 class="fw-semibold display-1 text-dark">
+          "Hey! I'm<br />
+          <span>{</span>
+          {fullName}<span>}</span>"
+        </h1>
+        <!--     links -->
+        <c-portfolio-icons
+          linked-in={trLinkedinUrl}
+          github={trGithubUrl}
+          twitter={trTwitterUrl}
+          trail-head={trTrailheadUrl}
+        ></c-portfolio-icons>
 
-      <div class="banner-description text-end">
-        <h2 class="text-white">
-          "I'm a {designation}, <br />living in {location} <br />working for
-          {companyName}!"
-        </h2>
+        <div class="banner-description text-end">
+          <h2 class="text-white">
+            "I'm a {designation}, <br />living in {location} <br />working for
+            {companyName}!"
+          </h2>
+        </div>
       </div>
     </div>
   </div>
-
-  <!-- <div class="banner"> -->
-  <!-- <div class="banner-text">
-      <h1>
-        "Hey! I'm<br />
-        {fullName}"
-      </h1>
-    </div> -->
-
-  <!-- <div>
-      <a href={linkedinUrl} target="_blank">
-        <img src={linkedin} class="social-icon" />
-      </a>
-      <a href={githubUrl} target="_blank">
-        <img src={github} class="social-icon" />
-      </a>
-      <a href={twitterUrl} target="_blank">
-        <img src={twitter} class="social-icon" />
-      </a>
-      <a href={trailheadUrl} target="_blank">
-        <img src={trailhead} class="social-icon" />
-      </a>
-    </div> -->
-  <!-- <div class="banner-description">
-      "I'm a {designation}, <br />living in {location} <br />working for
-      {companyName}!"
-    </div> -->
-  <!-- </div> -->
 </template>

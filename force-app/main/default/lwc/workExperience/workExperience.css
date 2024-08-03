@@ -13,7 +13,7 @@
 .more-details-content {
   color: lightcyan;
   font-stretch: expanded;
-  width: 80%;
+  /* width: 80%; */
 }
 
 .exp-points p {
@@ -37,21 +37,21 @@
 }
 
 .card-1 {
-  min-height: 500px;
-  width: 50%;
+  /* min-height: 500px; */
+  /* width: 50%; */
 }
 .slds-grid {
   background-color: #030008;
 }
 .card-2 {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 40%;
-  transform: translateY(-50%);
+  transform: translateY(-50%); */
 
   background: rgba(255, 255, 255, 0.35);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -60,5 +60,5 @@
     rgba(240, 46, 170, 0.3) 10px 10px,
     rgba(240, 46, 170, 0.2) 15px 15px,
     rgba(240, 46, 170, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px;
+    rgba(240, 46, 170, 0.05) 25px 25px; */
 }

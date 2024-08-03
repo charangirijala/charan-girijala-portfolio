@@ -5,7 +5,7 @@ h1 {
   --bs-dark-rgb: 60, 2, 151;
   color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
 }
-.banner {
+.mandate-p-m-class {
   background-color: #030008 !important;
 }
 

@@ -46,7 +46,8 @@ export default class WorkExperience extends LightningElement {
   //prepare all data in tabs array to use in lighting-tab
   tabs = [];
   get tabData() {
-    if (this.records != null) {
+    if (this.tabs.length !== 0) return this.tabs;
+    else if (this.records != null) {
       this.records.forEach((workExp) => {
         this.tabs.push({
           value: `${workExp.fields.Organization__c.value}`,
@@ -59,6 +60,7 @@ export default class WorkExperience extends LightningElement {
         });
       });
     }
+    console.log("Size of tabs: ", this.tabs.length);
     return this.tabs;
   }
 
