@@ -36,10 +36,25 @@
   color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
 }
 
-.card-1 {
-  /* min-height: 500px; */
-  /* width: 50%; */
+.slds-tabs {
+  position: relative;
 }
+
+.slds-tabs-mobile {
+  padding-left: 0 !important;
+  background-color: #000000;
+}
+.slds-button_full-width {
+  color: #6335ac !important;
+  filter: brightness(4);
+  font-weight: 600 !important;
+  letter-spacing: -0.05em !important;
+}
+
+.slds-panel_animated {
+  position: static !important;
+}
+
 .slds-grid {
   background-color: #030008;
 }
@@ -61,4 +76,10 @@
     rgba(240, 46, 170, 0.2) 15px 15px,
     rgba(240, 46, 170, 0.1) 20px 20px,
     rgba(240, 46, 170, 0.05) 25px 25px; */
+}
+
+@media only screen and (max-width: 480px) {
+  .mandate-p-m-class {
+    margin-bottom: 0rem !important;
+  }
 }

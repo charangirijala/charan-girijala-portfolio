@@ -13,6 +13,7 @@
 .wrapper {
   background-size: cover;
   padding: 2rem;
+  border-radius: 1rem;
 }
 .tech-tag {
   padding: 3px;
@@ -30,4 +31,10 @@
   font-stretch: semi-expanded;
   font-weight: 400;
   color: white;
+}
+
+@media only screen and (max-width: 480px) {
+  .wrapper {
+    padding: 0rem;
+  }
 }

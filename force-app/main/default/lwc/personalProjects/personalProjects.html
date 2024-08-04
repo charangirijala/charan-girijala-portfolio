@@ -5,12 +5,16 @@
     <div class="wrapper">
       <div class="slds-container_x-large slds-container_center">
         <h1 class="header">Check out some projects:)</h1>
-        <div class="slds-grid slds-grid_align-center project-container">
-          <div class="slds-col slds-size_6-of-12 side-projects">
+        <div
+          class="slds-grid slds-grid_align-center project-container slds-wrap"
+        >
+          <div
+            class="slds-col slds-size_12-of-12 slds-large-size_6-of-12 side-projects"
+          >
             <div class="slds-grid slds-grid_vertical">
               <template lwc:if={leftProjectsData}>
                 <template for:each={leftProjectsData} for:item="projectData">
-                  <div class="slds-col" key={projectData.id}>
+                  <div class="slds-col mb-3 mb-lg-0" key={projectData.id}>
                     <c-single-project
                       project-data={projectData}
                     ></c-single-project>
@@ -19,7 +23,9 @@
               </template>
             </div>
           </div>
-          <div class="slds-col slds-size_6-of-12 main-project">
+          <div
+            class="slds-col slds-size_12-of-12 slds-large-size_6-of-12 main-project"
+          >
             <c-single-project project-data={mainProjectData}></c-single-project>
           </div>
         </div>

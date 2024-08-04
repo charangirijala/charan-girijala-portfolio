@@ -34,3 +34,16 @@
   width: 50px;
   height: 50px;
 }
+
+@media only screen and (max-width: 480px) {
+  .mandate-p-m-class {
+    margin-top: 0.5rem !important;
+  }
+  .colone {
+    padding-right: 0px;
+    margin-bottom: 1rem;
+  }
+  .git-img {
+    height: 4rem;
+  }
+}

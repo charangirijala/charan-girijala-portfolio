@@ -45,10 +45,25 @@ export default class WorkExperience extends LightningElement {
 
   //prepare all data in tabs array to use in lighting-tab
   tabs = [];
+  tabNames = [];
+  tabContent = [];
   get tabData() {
     if (this.tabs.length !== 0) return this.tabs;
     else if (this.records != null) {
+      let count = 0;
       this.records.forEach((workExp) => {
+        this.tabNames.push({
+          company: workExp.fields.Organization__c.value,
+          dataId: "tabId-" + count.toString()
+        });
+        this.tabContent.push({
+          dataId: "tabId-" + count.toString(),
+          duration: workExp.fields.Duration__c.value,
+          role: workExp.fields.Role__c.value,
+          summary: this.getSummaryList(
+            workExp.fields.Experience_Summary__c.value
+          )
+        });
         this.tabs.push({
           value: `${workExp.fields.Organization__c.value}`,
           label: `${workExp.fields.Organization__c.value}`,
@@ -58,9 +73,13 @@ export default class WorkExperience extends LightningElement {
           role: `${workExp.fields.Role__c.value}`,
           duration: `${workExp.fields.Duration__c.value}`
         });
+
+        count++;
       });
     }
     console.log("Size of tabs: ", this.tabs.length);
+    console.log("Tab Names: ", this.tabNames.length);
+    console.log("Tab content: ", this.tabContent.length);
     return this.tabs;
   }
 
@@ -81,5 +100,44 @@ export default class WorkExperience extends LightningElement {
   //handle the styling and functionality of active tab
   handleActive() {
     console.log("Tab active");
+  }
+
+  handleTabClick(event) {
+    const dataId = event.currentTarget.dataset.id;
+    // console.log(
+    //   "Button clicked with data-id: ",
+    //   event.currentTarget.dataset.id
+    // );
+
+    const ulTag = this.template.querySelector(".slds-tabs-mobile");
+    const panelTags = this.template.querySelectorAll(".slds-panel");
+    ulTag.classList.add("slds-hidden");
+    ulTag.style.display = "none";
+    panelTags.forEach((tag) => {
+      if (dataId === tag.dataset.id) {
+        // console.log("Entered if condition");
+        tag.hidden = false;
+        tag.classList.remove("slds-hidden");
+        tag.classList.add("slds-is-open");
+      }
+    });
+  }
+
+  handleBackNavigation(event) {
+    const dataId = event.currentTarget.dataset.id;
+    // console.log("Back Nav button clicked", dataId);
+    const ulTag = this.template.querySelector(".slds-tabs-mobile");
+    ulTag.classList.remove("slds-hidden");
+    ulTag.style.display = "block";
+    const panelTags = this.template.querySelectorAll(".slds-panel");
+
+    panelTags.forEach((tag) => {
+      if (dataId === tag.dataset.id) {
+        //console.log("Entered if condition");
+        tag.hidden = true;
+        tag.classList.add("slds-hidden");
+        tag.classList.remove("slds-is-open");
+      }
+    });
   }
 }

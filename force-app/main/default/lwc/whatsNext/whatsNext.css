@@ -34,3 +34,13 @@
   font-weight: 800 !important;
   letter-spacing: -0.05em !important;
 }
+
+@media only screen and (max-width: 480px) {
+  .touch {
+    font-size: larger;
+  }
+  .hi-btn {
+    font-size: large;
+    padding: 0.5rem;
+  }
+}

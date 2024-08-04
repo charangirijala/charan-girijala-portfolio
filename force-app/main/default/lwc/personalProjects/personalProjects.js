@@ -44,10 +44,10 @@ export default class PersonalProjects extends LightningElement {
   }
 
   processProjectData(data) {
-    console.log("From processProjectData Function");
+    // console.log("From processProjectData Function");
 
     this.allProjectsData = data.records;
-    console.log("allProjectsData: ", this.allProjectsData);
+    // console.log("allProjectsData: ", this.allProjectsData);
     this.allProjectsData.forEach((project) => {
       if (
         project.fields.Is_Main_Project__c.value &&

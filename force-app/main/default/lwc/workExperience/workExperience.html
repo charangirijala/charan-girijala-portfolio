@@ -26,7 +26,8 @@
           </div>
         </div>
         <div class="slds-col slds-size_12-of-12 slds-large-size_7-of-12">
-          <div class="card-2 slds-var-m-top_xx-large">
+          <h1 class="more-details-header slds-hide_large">My Experience__</h1>
+          <div class="card-2">
             <div class="slds-show_large">
               <lightning-tabset variant="vertical">
                 <template for:each={tabData} for:item="tab">
@@ -46,156 +47,76 @@
             </div>
 
             <div class="slds-hide_large">
-              <!-- <lightning-tabset variant="scoped"> -->
-              <!-- <template for:each={tabData} for:item="tab">
-                  <lightning-tab
-                    label={tab.label}
-                    key={tab.value}
-                    value={tab.value}
-                    onactive={handleActive}
-                    ><h2 class="role">{tab.role}</h2>
-                    <span class="duration">{tab.duration}</span>
-                    <template for:each={tab.content} for:item="point">
-                      <p key={point}><span class="exp-points">{point}</span></p>
-                    </template>
-                  </lightning-tab>
-                </template> -->
-              <!-- </lightning-tabset> -->
-              <div class="slds-tabs-mobile__container">
+              <div class="slds-tabs">
                 <ul class="slds-tabs-mobile">
-                  <li class="slds-tabs-mobile__item">
-                    <button class="slds-button slds-button_full-width">
-                      <span class="slds-truncate" title="Item One"
-                        >Item One</span
-                      ><svg
-                        class="slds-icon slds-icon_x-small slds-icon-text-default"
-                        aria-hidden="true"
-                      >
-                        <use
-                          xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
-                        ></use>
-                      </svg>
-                    </button>
-                  </li>
-                  <li class="slds-tabs-mobile__item">
-                    <button class="slds-button slds-button_full-width">
-                      <span class="slds-truncate" title="Item Two"
-                        >Item Two</span
-                      ><svg
-                        class="slds-icon slds-icon_x-small slds-icon-text-default"
-                        aria-hidden="true"
-                      >
-                        <use
-                          xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
-                        ></use>
-                      </svg>
-                    </button>
-                  </li>
-                  <li class="slds-tabs-mobile__item">
-                    <button class="slds-button slds-button_full-width">
-                      <span class="slds-truncate" title="Item Three"
-                        >Item Three</span
-                      ><svg
-                        class="slds-icon slds-icon_x-small slds-icon-text-default"
-                        aria-hidden="true"
-                      >
-                        <use
-                          xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
-                        ></use>
-                      </svg>
-                    </button>
-                  </li>
+                  <template lwc:if={tabNames}>
+                    <template for:each={tabNames} for:item="tab">
+                      <li key={tab.dataId} class="slds-tabs-mobile__item">
+                        <button
+                          class="slds-button slds-button_full-width"
+                          data-id={tab.dataId}
+                          onclick={handleTabClick}
+                        >
+                          <span class="slds-truncate" title="Item One"
+                            >{tab.company}</span
+                          ><svg
+                            class="slds-icon slds-icon_x-small slds-icon-text-default"
+                            aria-hidden="true"
+                          >
+                            <use
+                              xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+                            ></use>
+                          </svg>
+                        </button>
+                      </li>
+                    </template>
+                  </template>
                 </ul>
-                <div
-                  class="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
-                  hidden=""
-                >
-                  <div
-                    class="slds-panel__header slds-panel__header_align-center"
-                  >
-                    <button
-                      class="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
-                      title="Collapse Item 1 Panel"
+
+                <!-- Panels start here -->
+                <template lwc:if={tabContent}>
+                  <template for:each={tabContent} for:item="tab">
+                    <div
+                      class="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+                      hidden=""
+                      key={tab.dataId}
+                      data-id={tab.dataId}
                     >
-                      <svg class="slds-button__icon" aria-hidden="true">
-                        <use
-                          xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
-                        ></use></svg
-                      ><span class="slds-assistive-text"
-                        >Collapse Item 1 Panel</span
+                      <div
+                        class="slds-panel__header slds-panel__header_align-center"
                       >
-                    </button>
-                    <h2
-                      class="slds-panel__header-title slds-text-heading_small slds-truncate"
-                      title="Item 1 Panel"
-                    >
-                      Item 1 Panel
-                    </h2>
-                  </div>
-                  <div class="slds-panel__body">
-                    A panel body accepts any layout or component
-                  </div>
-                </div>
-                <div
-                  class="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
-                  hidden=""
-                >
-                  <div
-                    class="slds-panel__header slds-panel__header_align-center"
-                  >
-                    <button
-                      class="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
-                      title="Collapse Item 2 Panel"
-                    >
-                      <svg class="slds-button__icon" aria-hidden="true">
-                        <use
-                          xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
-                        ></use></svg
-                      ><span class="slds-assistive-text"
-                        >Collapse Item 2 Panel</span
-                      >
-                    </button>
-                    <h2
-                      class="slds-panel__header-title slds-text-heading_small slds-truncate"
-                      title="Item 2 Panel"
-                    >
-                      Item 2 Panel
-                    </h2>
-                  </div>
-                  <div class="slds-panel__body">
-                    A panel body accepts any layout or component
-                  </div>
-                </div>
-                <div
-                  class="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
-                  hidden=""
-                >
-                  <div
-                    class="slds-panel__header slds-panel__header_align-center"
-                  >
-                    <button
-                      class="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
-                      title="Collapse Item 3 Panel"
-                    >
-                      <svg class="slds-button__icon" aria-hidden="true">
-                        <use
-                          xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
-                        ></use></svg
-                      ><span class="slds-assistive-text"
-                        >Collapse Item 3 Panel</span
-                      >
-                    </button>
-                    <h2
-                      class="slds-panel__header-title slds-text-heading_small slds-truncate"
-                      title="Item 3 Panel"
-                    >
-                      Item 3 Panel
-                    </h2>
-                  </div>
-                  <div class="slds-panel__body">
-                    A panel body accepts any layout or component
-                  </div>
-                </div>
+                        <button
+                          class="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+                          title="Collapse Item Panel"
+                          data-id={tab.dataId}
+                          onclick={handleBackNavigation}
+                        >
+                          <svg class="slds-button__icon" aria-hidden="true">
+                            <use
+                              xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+                            ></use></svg
+                          ><span class="slds-assistive-text"
+                            >Collapse Item Panel</span
+                          >
+                        </button>
+                        <h2
+                          class="slds-panel__header-title slds-text-heading_small slds-truncate"
+                          title="Item 1 Panel"
+                        >
+                          {tab.role}
+                        </h2>
+                      </div>
+                      <div class="slds-panel__body">
+                        <span class="duration">{tab.duration}</span>
+                        <template for:each={tab.summary} for:item="point">
+                          <p key={point}>
+                            <span class="exp-points">{point}</span>
+                          </p>
+                        </template>
+                      </div>
+                    </div>
+                  </template>
+                </template>
               </div>
             </div>
           </div>

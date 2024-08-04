@@ -2,3 +2,11 @@ p {
   color: darkgray;
   font-family: monospace;
 }
+
+@media only screen and (max-width: 480px) {
+  p {
+    margin-bottom: 0px;
+    font-size: xx-small;
+    position: sticky;
+  }
+}
