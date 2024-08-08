@@ -122,3 +122,21 @@
     width: 5rem;
   }
 }
+
+@media only screen and (max-width: 480px) {
+  .box-grid {
+    padding: 5px;
+  }
+  img {
+    max-width: 40px;
+  }
+
+  .skill-image {
+    width: auto;
+    height: auto;
+  }
+
+  .box-grid {
+    padding: 0.1rem;
+  }
+}
