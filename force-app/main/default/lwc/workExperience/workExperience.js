@@ -1,8 +1,9 @@
-import { LightningElement, wire } from "lwc";
+import { api, LightningElement, wire } from "lwc";
 import { loadStyle } from "lightning/platformResourceLoader";
 import Ninjabootstrap from "@salesforce/resourceUrl/Ninjabootstrap";
 import { getRelatedListRecords } from "lightning/uiRelatedListApi";
 export default class WorkExperience extends LightningElement {
+  @api summaryDetails;
   records;
   bootStrapLoaded = false;
   //loading bootstrap
@@ -17,6 +18,11 @@ export default class WorkExperience extends LightningElement {
           console.log("Err loading bootstrap in portfolioBanner", err);
         });
     }
+
+    console.log(
+      "Summary from workExperience",
+      JSON.stringify(this.summaryDetails)
+    );
   }
 
   @wire(getRelatedListRecords, {

@@ -4,6 +4,14 @@
   border: 1px solid #fff;
 }
 
+h1 {
+  filter: brightness(4);
+  letter-spacing: -0.05em !important;
+  --bs-text-opacity: 1;
+  --bs-dark-rgb: 60, 2, 151;
+  color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
+}
+
 .skill-image {
   width: 60px;
   height: 60px;
@@ -23,6 +31,7 @@
 .skill-name {
   font-stretch: expanded;
   font-weight: 400;
+  color: white;
 }
 
 .progress-percent {
@@ -138,5 +147,10 @@
 
   .box-grid {
     padding: 0.1rem;
+  }
+
+  .box {
+    margin: 0px;
+    border: none;
   }
 }

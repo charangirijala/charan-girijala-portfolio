@@ -6,10 +6,14 @@ import FULLNAME from "@salesforce/schema/Portfolio__c.Full_Name__c";
 import LOCATION from "@salesforce/schema/Portfolio__c.Location__c";
 import COMPANY_NAME from "@salesforce/schema/Portfolio__c.CompanyName__c";
 import DESIGNATION from "@salesforce/schema/Portfolio__c.Designation__c";
+import SUMMARY_ONE from "@salesforce/schema/Portfolio__c.Summary_One__c";
+import SUMMARY_TWO from "@salesforce/schema/Portfolio__c.Summary_Two__c";
+import SUMMARY_THREE from "@salesforce/schema/Portfolio__c.Summary_Three__c";
 export default class PortfolioBanner extends LightningElement {
   bootStrapLoaded = false;
   //loading bootstrap
   renderedCallback() {
+    //bootstrap
     if (!this.bootStrapLoaded) {
       Promise.all([loadStyle(this, Ninjabootstrap)])
         .then(() => {
@@ -20,6 +24,15 @@ export default class PortfolioBanner extends LightningElement {
           console.log("Err loading bootstrap in portfolioBanner", err);
         });
     }
+
+    const event = new CustomEvent("summarydetails", {
+      detail: {
+        summaryoneData: getFieldValue(this.portfolioData.data, SUMMARY_ONE),
+        summarytwoData: getFieldValue(this.portfolioData.data, SUMMARY_TWO),
+        summarythreeData: getFieldValue(this.portfolioData.data, SUMMARY_THREE)
+      }
+    });
+    this.dispatchEvent(event);
   }
   //site urls
   @api trRecordId; //= "a00NS000008ujYzYAI";
@@ -38,17 +51,17 @@ export default class PortfolioBanner extends LightningElement {
 
   @wire(getRecord, {
     recordId: "$trRecordId",
-    fields: [FULLNAME, LOCATION, COMPANY_NAME, DESIGNATION]
+    fields: [
+      FULLNAME,
+      LOCATION,
+      COMPANY_NAME,
+      DESIGNATION,
+      SUMMARY_ONE,
+      SUMMARY_TWO,
+      SUMMARY_THREE
+    ]
   })
   portfolioData;
-  // portfolioHandler({ data, err }) {
-  //   if (data) {
-  //     console.log("Data : ", JSON.stringify(data));
-  //   }
-  //   if (err) {
-  //     console.error(err);
-  //   }
-  // }
 
   get fullName() {
     return getFieldValue(this.portfolioData.data, FULLNAME);
@@ -64,5 +77,17 @@ export default class PortfolioBanner extends LightningElement {
 
   get designation() {
     return getFieldValue(this.portfolioData.data, DESIGNATION);
+  }
+
+  get summaryOne() {
+    return getFieldValue(this.portfolioData.data, SUMMARY_ONE);
+  }
+
+  get summaryTwo() {
+    return getFieldValue(this.portfolioData.data, SUMMARY_TWO);
+  }
+
+  get summaryThree() {
+    return getFieldValue(this.portfolioData.data, SUMMARY_THREE);
   }
 }

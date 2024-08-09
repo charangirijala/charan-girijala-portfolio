@@ -1,7 +1,9 @@
+/* eslint-disable @lwc/lwc/no-api-reassignments */
 import { LightningElement, api } from "lwc";
 import { loadStyle } from "lightning/platformResourceLoader";
 import Ninjabootstrap from "@salesforce/resourceUrl/Ninjabootstrap";
 export default class MasterComponent extends LightningElement {
+  summaryDetails;
   bootStrapLoaded = false;
   //loading bootstrap
   renderedCallback() {
@@ -15,6 +17,14 @@ export default class MasterComponent extends LightningElement {
           console.log("Err loading bootstrap in portfolioBanner", err);
         });
     }
+  }
+  summaryDetailsHandler(event) {
+    console.log("Details of summary::", JSON.stringify(event.detail));
+    this.summaryDetails = {
+      summaryOne: event.detail.summaryoneData,
+      summaryTwo: event.detail.summarytwoData,
+      summaryThree: event.detail.summarythreeData
+    };
   }
 
   @api recordId; //= "a00NS000008ujYzYAI";

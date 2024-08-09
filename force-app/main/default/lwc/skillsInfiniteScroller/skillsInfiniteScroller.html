@@ -23,11 +23,10 @@
       ></template>
     </ul>
   </div> -->
+  <h1>Skills>></h1>
   <template for:each={allSkills} for:item="skill">
     <div class="box" key={skill.id}>
-      <div
-        class="slds-grid slds-grid_vertical-align-center slds-var-p-around_medium box-grid"
-      >
+      <div class="slds-grid slds-grid_vertical-align-center box-grid">
         <div class="slds-col slds-grow-none">
           <div class="skill-image">
             <img src={skill.fields.Svg_Image__c.value} alt="" />
