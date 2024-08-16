@@ -5,6 +5,7 @@ import Ninjabootstrap from "@salesforce/resourceUrl/Ninjabootstrap";
 export default class MasterComponent extends LightningElement {
   summaryDetails;
   bootStrapLoaded = false;
+  email;
   //loading bootstrap
   renderedCallback() {
     if (!this.bootStrapLoaded) {
@@ -25,6 +26,7 @@ export default class MasterComponent extends LightningElement {
       summaryTwo: event.detail.summarytwoData,
       summaryThree: event.detail.summarythreeData
     };
+    this.email = event.detail.email;
   }
 
   @api recordId; //= "a00NS000008ujYzYAI";

@@ -75,7 +75,6 @@ export default class SkillsInfiniteScroller extends LightningElement {
         const width = confidenceMap.get(ele.className);
         ele.style.height = "10px";
         ele.style.width = width;
-        ele.style.backgroundColor = "#45F925";
       }
     });
   }

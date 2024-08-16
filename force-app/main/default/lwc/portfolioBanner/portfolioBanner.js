@@ -9,6 +9,7 @@ import DESIGNATION from "@salesforce/schema/Portfolio__c.Designation__c";
 import SUMMARY_ONE from "@salesforce/schema/Portfolio__c.Summary_One__c";
 import SUMMARY_TWO from "@salesforce/schema/Portfolio__c.Summary_Two__c";
 import SUMMARY_THREE from "@salesforce/schema/Portfolio__c.Summary_Three__c";
+import EMAIL from "@salesforce/schema/Portfolio__c.Email__c";
 export default class PortfolioBanner extends LightningElement {
   bootStrapLoaded = false;
   //loading bootstrap
@@ -29,7 +30,8 @@ export default class PortfolioBanner extends LightningElement {
       detail: {
         summaryoneData: getFieldValue(this.portfolioData.data, SUMMARY_ONE),
         summarytwoData: getFieldValue(this.portfolioData.data, SUMMARY_TWO),
-        summarythreeData: getFieldValue(this.portfolioData.data, SUMMARY_THREE)
+        summarythreeData: getFieldValue(this.portfolioData.data, SUMMARY_THREE),
+        email: getFieldValue(this.portfolioData.data, EMAIL)
       }
     });
     this.dispatchEvent(event);
@@ -54,6 +56,7 @@ export default class PortfolioBanner extends LightningElement {
     fields: [
       FULLNAME,
       LOCATION,
+      EMAIL,
       COMPANY_NAME,
       DESIGNATION,
       SUMMARY_ONE,

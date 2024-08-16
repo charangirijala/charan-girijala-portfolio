@@ -12,10 +12,12 @@
           I’ll try my best to get back to you!
         </p>
       </div>
-      <div class="slds-align_absolute-center">
-        <button class="slds-button slds-button_neutral hi-btn">
-          Say Hello
-        </button>
+      <div class="" lwc:if={mailToAddress}>
+        <div class="slds-align_absolute-center">
+          <button class="slds-button slds-button_neutral hi-btn">
+            <a href={mailToAddress}>Say Hello</a>
+          </button>
+        </div>
       </div>
     </div>
   </div>

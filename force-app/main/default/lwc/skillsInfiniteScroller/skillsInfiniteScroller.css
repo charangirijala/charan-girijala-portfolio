@@ -36,7 +36,7 @@ h1 {
 
 .progress-percent {
   width: 70%;
-  background-color: antiquewhite;
+  background-color: lightpink;
   height: 10px;
 }
 :host {
@@ -143,6 +143,7 @@ h1 {
   .skill-image {
     width: auto;
     height: auto;
+    padding: 4px;
   }
 
   .box-grid {
