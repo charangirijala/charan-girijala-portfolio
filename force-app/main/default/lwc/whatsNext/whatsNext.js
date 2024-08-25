@@ -1,12 +1,9 @@
 import { api, LightningElement, track } from "lwc";
 
 export default class WhatsNext extends LightningElement {
-  @api email;
+  @api emailId;
   @track mailToAddress;
   renderedCallback() {
-    console.log("Email id:", this.email);
-    if (this.email) {
-      this.mailToAddress = "mailto:" + this.email;
-    }
+    console.log("Email id:", this.emailId);
   }
 }

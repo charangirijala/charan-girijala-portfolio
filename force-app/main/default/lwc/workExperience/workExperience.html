@@ -20,12 +20,12 @@
           </div>
         </div>
         <div class="slds-col slds-size_12-of-12 slds-large-size_7-of-12">
-          <h1 class="more-details-header slds-hide_large">My Experience__</h1>
+          <h1 class="more-details-header">My Experience__</h1>
           <div class="card-2">
-            <div class="slds-show_large">
-              <lightning-tabset variant="vertical">
-                <template for:each={tabData} for:item="tab">
-                  <lightning-tab
+            <!-- <div class="slds-show_large"> -->
+            <!-- <lightning-tabset variant="vertical"> -->
+            <!-- <template for:each={tabData} for:item="tab"> -->
+            <!-- <lightning-tab
                     label={tab.label}
                     key={tab.value}
                     value={tab.value}
@@ -35,12 +35,13 @@
                     <template for:each={tab.content} for:item="point">
                       <p key={point}><span class="exp-points">{point}</span></p>
                     </template>
-                  </lightning-tab>
-                </template>
-              </lightning-tabset>
-            </div>
+                  </lightning-tab> -->
+            <!-- </template> -->
+            <!-- </lightning-tabset> -->
+            <!-- </div> -->
+            <template for:each={tabData} for:item="tab"></template>
 
-            <div class="slds-hide_large">
+            <div>
               <div class="slds-tabs">
                 <ul class="slds-tabs-mobile">
                   <template lwc:if={tabNames}>
@@ -93,12 +94,12 @@
                             >Collapse Item Panel</span
                           >
                         </button>
-                        <h2
+                        <h1
                           class="slds-panel__header-title slds-text-heading_small slds-truncate"
                           title="Item 1 Panel"
                         >
                           {tab.role}
-                        </h2>
+                        </h1>
                       </div>
                       <div class="slds-panel__body">
                         <span class="duration">{tab.duration}</span>

@@ -16,6 +16,18 @@
   /* width: 80%; */
 }
 
+.slds-panel {
+  background-color: darkcyan;
+}
+
+.slds-panel__header-title {
+  margin: 0px;
+  color: white;
+  font-size: larger;
+}
+.slds-button .slds-button_icon {
+  color: white;
+}
 .exp-points p {
   margin-bottom: 0.2rem !important;
 }

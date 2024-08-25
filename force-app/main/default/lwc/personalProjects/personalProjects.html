@@ -26,7 +26,11 @@
           <div
             class="slds-col slds-size_12-of-12 slds-large-size_6-of-12 main-project"
           >
-            <c-single-project project-data={mainProjectData}></c-single-project>
+            <template lwc:if={mainProjectData}>
+              <c-single-project
+                project-data={mainProjectData}
+              ></c-single-project
+            ></template>
           </div>
         </div>
 
