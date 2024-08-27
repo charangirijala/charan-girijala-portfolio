@@ -1,0 +1,12 @@
+:host {
+  color: white;
+}
+.duration {
+  padding: 3px;
+  font-weight: 700;
+  --bs-text-opacity: 1;
+  --bs-dark-rgb: 60, 2, 151;
+  --bs-light-rgb: 138, 246, 152;
+  background-color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
+  color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
+}

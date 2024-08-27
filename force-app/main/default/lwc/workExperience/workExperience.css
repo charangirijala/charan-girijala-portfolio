@@ -3,6 +3,14 @@
   background-color: aquamarine !important;
 }
 
+.slds-progress_vertical .slds-progress__item_content {
+  margin-top: 0rem !important;
+  padding-bottom: 2rem !important;
+}
+
+.slds-progress_vertical .slds-progress__item {
+  align-items: unset;
+}
 .more-details-header {
   filter: brightness(4);
   letter-spacing: -0.05em !important;

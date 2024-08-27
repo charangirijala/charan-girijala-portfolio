@@ -1,64 +1,44 @@
 <template>
   <div class="slds-progress slds-progress_vertical">
     <ol class="slds-progress__list">
-      <li class="slds-progress__item slds-is-active">
-        <div class="slds-progress__marker">
-          <span class="slds-assistive-text">Active</span>
-        </div>
-        <div
-          class="slds-progress__item_content slds-grid slds-grid_align-spread"
-        >
-          <!-- All content goes here -->
-          <lightning-card variant="base">
-            <div>
-              <!-- Card Body  -->
-              <h1>Systems Engineer at TCS</h1>
+      <template for:each={workExpObj} for:item="work">
+        <li class="slds-progress__item slds-is-active" key={work.role}>
+          <div class="slds-progress__marker">
+            <span class="slds-assistive-text">Active</span>
+          </div>
+          <div class="slds-progress__item_content slds-grid slds-wrap">
+            <div class="slds-col slds-size_12-of-12">
+              <h3>{work.role}</h3>
             </div>
-          </lightning-card>
-        </div>
-      </li>
-      <li class="slds-progress__item slds-is-active">
-        <div class="slds-progress__marker">
-          <span class="slds-assistive-text">Active</span>
-        </div>
-        <div
-          class="slds-progress__item_content slds-grid slds-grid_align-spread"
-        >
-          Step 2
-        </div>
-      </li>
+            <div class="slds-col slds-size_12-of-12">
+              <span>{work.organization}</span>
+            </div>
+            <div class="slds-col slds-size_12-of-12">
+              <span class="duration">{work.duration}</span>
+            </div>
+            <div class="slds-col slds-size_12-of-12">
+              <template for:each={work.expSummary} for:item="point">
+                <div key={point}>
+                  <lightning-icon
+                    icon-name="utility:apex"
+                    alternative-text="apex"
+                    variant="inverse"
+                    size="large"
+                    title="apex"
+                  ></lightning-icon>
+                  <p style="display: inline-block">{point}</p>
+                </div>
+              </template>
+            </div>
+          </div>
+        </li>
+      </template>
       <li class="slds-progress__item">
         <div class="slds-progress__marker"></div>
         <div
           class="slds-progress__item_content slds-grid slds-grid_align-spread"
-        >
-          Step 3
-        </div>
-      </li>
-      <li class="slds-progress__item">
-        <div class="slds-progress__marker"></div>
-        <div
-          class="slds-progress__item_content slds-grid slds-grid_align-spread"
-        >
-          Step 4
-        </div>
-      </li>
-      <li class="slds-progress__item">
-        <div class="slds-progress__marker"></div>
-        <div
-          class="slds-progress__item_content slds-grid slds-grid_align-spread"
-        >
-          Step 5
-        </div>
+        ></div>
       </li>
     </ol>
-    <div
-      aria-valuemin="0"
-      aria-valuemax="100"
-      aria-valuenow="25"
-      role="progressbar"
-    >
-      <span class="slds-assistive-text">Progress: 25%</span>
-    </div>
   </div>
 </template>
