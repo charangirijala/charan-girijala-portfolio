@@ -11,24 +11,17 @@
               <h3>{work.role}</h3>
             </div>
             <div class="slds-col slds-size_12-of-12">
+              <span class="duration">{work.duration}</span>
               <span>{work.organization}</span>
             </div>
-            <div class="slds-col slds-size_12-of-12">
-              <span class="duration">{work.duration}</span>
-            </div>
-            <div class="slds-col slds-size_12-of-12">
-              <template for:each={work.expSummary} for:item="point">
-                <div key={point}>
-                  <lightning-icon
-                    icon-name="utility:apex"
-                    alternative-text="apex"
-                    variant="inverse"
-                    size="large"
-                    title="apex"
-                  ></lightning-icon>
-                  <p style="display: inline-block">{point}</p>
-                </div>
-              </template>
+            <div class="slds-col slds-size_12-of-12 work-exp">
+              <ul class="work-exp-ul">
+                <template for:each={work.expSummary} for:item="point">
+                  <li key={point}>
+                    <p style="display: inline-block">{point}</p>
+                  </li>
+                </template>
+              </ul>
             </div>
           </div>
         </li>

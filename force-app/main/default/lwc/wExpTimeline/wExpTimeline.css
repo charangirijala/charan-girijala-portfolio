@@ -10,3 +10,10 @@
   background-color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
   color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
 }
+
+.work-exp p {
+  margin-bottom: 0.3rem !important;
+}
+.work-exp-ul {
+  padding-left: 0px !important;
+}
