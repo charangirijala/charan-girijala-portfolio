@@ -11,9 +11,6 @@
   color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
 }
 
-.work-exp p {
-  margin-bottom: 0.3rem !important;
-}
-.work-exp-ul {
-  padding-left: 0px !important;
+.work-exp-ul li {
+  list-style: square;
 }
