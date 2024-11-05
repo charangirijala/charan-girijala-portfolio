@@ -2,6 +2,7 @@
   color: white;
 }
 .duration {
+  margin-right: 5px;
   padding: 3px;
   font-weight: 700;
   --bs-text-opacity: 1;
@@ -11,6 +12,13 @@
   color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
 }
 
+.role {
+  font-weight: 100;
+}
+
+.org {
+  font-weight: 200;
+}
 .work-exp-ul li {
   list-style: square;
 }

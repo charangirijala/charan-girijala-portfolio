@@ -27,12 +27,20 @@
 
 .hi-btn {
   background-color: black;
+}
+
+.btn-container {
+  padding-top: 2rem !important;
+}
+.hi-btn a {
   font-size: xx-large;
   padding: 1rem;
   color: #6335ac !important;
   filter: brightness(4);
   font-weight: 800 !important;
   letter-spacing: -0.05em !important;
+  text-decoration: none;
+  border-color: white !important;
 }
 
 @media only screen and (max-width: 480px) {

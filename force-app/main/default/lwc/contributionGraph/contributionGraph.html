@@ -1,0 +1,490 @@
+<template>
+  <div>{rerender}</div>
+  <template lwc:if={contributionsCalendar}>
+    <div class="wrapper slds-var-m-bottom_medium">
+      <div class="header-container slds-var-m-vertical_x-small">
+        <div class="contributions">
+          <p class="total-contributions">
+            {totalContributions} contributions in {currentYear}
+          </p>
+        </div>
+      </div>
+      <div class="border py-2 graph-before-activity-overview">
+        <div
+          class="js-calendar-graph mx-md-2 mx-3 d-flex flex-column flex-items-end flex-xl-items-center overflow-hidden pt-1 is-graph-loading graph-canvas ContributionCalendar height-full text-center"
+        >
+          <div class="scroll">
+            <table
+              class="ContributionCalendar-grid js-calendar-graph-table"
+              style="border-spacing: 3px; overflow: hidden; position: relative"
+              data-theme={selectedTheme}
+            >
+              <caption class="sr-only">
+                Contribution Graph
+              </caption>
+
+              <thead>
+                <tr style="height: 13px">
+                  <td style="width: 28px">
+                    <span class="sr-only">Day of Week</span>
+                  </td>
+
+                  <td
+                    class="ContributionCalendar-label"
+                    colspan="5"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">January</span>
+                    <span aria-hidden="true" style="position: absolute; top: 0"
+                      >Jan</span
+                    >
+                  </td>
+
+                  <td
+                    class="ContributionCalendar-label"
+                    colspan="4"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">February</span>
+                    <span aria-hidden="true" style="position: absolute; top: 0"
+                      >Feb</span
+                    >
+                  </td>
+
+                  <td
+                    class="ContributionCalendar-label"
+                    colspan="4"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">March</span>
+                    <span aria-hidden="true" style="position: absolute; top: 0"
+                      >Mar</span
+                    >
+                  </td>
+
+                  <td
+                    class="ContributionCalendar-label"
+                    colspan="5"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">April</span>
+                    <span aria-hidden="true" style="position: absolute; top: 0"
+                      >Apr</span
+                    >
+                  </td>
+
+                  <td
+                    class="ContributionCalendar-label"
+                    colspan="4"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">May</span>
+                    <span aria-hidden="true" style="position: absolute; top: 0"
+                      >May</span
+                    >
+                  </td>
+
+                  <td
+                    class="ContributionCalendar-label"
+                    colspan="4"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">June</span>
+                    <span aria-hidden="true" style="position: absolute; top: 0"
+                      >Jun</span
+                    >
+                  </td>
+
+                  <td
+                    class="ContributionCalendar-label"
+                    colspan="5"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">July</span>
+                    <span aria-hidden="true" style="position: absolute; top: 0"
+                      >Jul</span
+                    >
+                  </td>
+
+                  <td
+                    class="ContributionCalendar-label"
+                    colspan="4"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">August</span>
+                    <span aria-hidden="true" style="position: absolute; top: 0"
+                      >Aug</span
+                    >
+                  </td>
+
+                  <td
+                    class="ContributionCalendar-label"
+                    colspan="4"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">September</span>
+                    <span aria-hidden="true" style="position: absolute; top: 0"
+                      >Sep</span
+                    >
+                  </td>
+
+                  <td
+                    class="ContributionCalendar-label"
+                    colspan="5"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">October</span>
+                    <span aria-hidden="true" style="position: absolute; top: 0"
+                      >Oct</span
+                    >
+                  </td>
+
+                  <td
+                    class="ContributionCalendar-label"
+                    colspan="4"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">November</span>
+                    <span aria-hidden="true" style="position: absolute; top: 0"
+                      >Nov</span
+                    >
+                  </td>
+
+                  <td
+                    class="ContributionCalendar-label"
+                    colspan="5"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">December</span>
+                    <span aria-hidden="true" style="position: absolute; top: 0"
+                      >Dec</span
+                    >
+                  </td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="height: 10px">
+                  <td
+                    class="ContributionCalendar-label"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">Sunday</span>
+                    <span
+                      aria-hidden="true"
+                      style="
+                        clip-path: Circle(0);
+                        position: absolute;
+                        bottom: -3px;
+                      "
+                    >
+                      Sun
+                    </span>
+                  </td>
+                  <template for:each={sun} for:item="day">
+                    <template lwc:if={day.isValidDay}>
+                      <td
+                        tabindex="0"
+                        data-ix="0"
+                        key={day.date}
+                        aria-selected="false"
+                        aria-describedby="contribution-graph-legend-level-0"
+                        style="width: 10px"
+                        data-date={day.date}
+                        data-level={day.level}
+                        role="gridcell"
+                        data-view-component="true"
+                        class="ContributionCalendar-day"
+                        aria-labelledby="tooltip-6f1935d6-232b-47e2-818f-b9f3ff617ba0"
+                      ></td
+                    ></template>
+                    <template lwc:else>
+                      <td key={day.date}></td>
+                    </template>
+                  </template>
+                </tr>
+                <tr style="height: 10px">
+                  <td
+                    class="ContributionCalendar-label"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">Monday</span>
+                    <span
+                      aria-hidden="true"
+                      style="clip-path: None; position: absolute; bottom: -3px"
+                    >
+                      Mon
+                    </span>
+                  </td>
+                  <template for:each={mon} for:item="day">
+                    <template lwc:if={day.isValidDay}>
+                      <td
+                        tabindex="0"
+                        data-ix="0"
+                        key={day.date}
+                        aria-selected="false"
+                        aria-describedby="contribution-graph-legend-level-0"
+                        style="width: 10px"
+                        data-date={day.date}
+                        data-level={day.level}
+                        role="gridcell"
+                        data-view-component="true"
+                        class="ContributionCalendar-day"
+                        aria-labelledby="tooltip-6f1935d6-232b-47e2-818f-b9f3ff617ba0"
+                      ></td
+                    ></template>
+                    <template lwc:else>
+                      <td key={day.date}></td>
+                    </template>
+                  </template>
+                </tr>
+                <tr style="height: 10px">
+                  <td
+                    class="ContributionCalendar-label"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">Tuesday</span>
+                    <span
+                      aria-hidden="true"
+                      style="
+                        clip-path: Circle(0);
+                        position: absolute;
+                        bottom: -3px;
+                      "
+                    >
+                      Tue
+                    </span>
+                  </td>
+                  <template for:each={tue} for:item="day">
+                    <template lwc:if={day.isValidDay}>
+                      <td
+                        tabindex="0"
+                        data-ix="0"
+                        key={day.date}
+                        aria-selected="false"
+                        aria-describedby="contribution-graph-legend-level-0"
+                        style="width: 10px"
+                        data-date={day.date}
+                        data-level={day.level}
+                        role="gridcell"
+                        data-view-component="true"
+                        class="ContributionCalendar-day"
+                        aria-labelledby="tooltip-6f1935d6-232b-47e2-818f-b9f3ff617ba0"
+                      ></td>
+                    </template>
+                    <template lwc:else>
+                      <td key={day.date}></td>
+                    </template>
+                  </template>
+                </tr>
+                <tr style="height: 10px">
+                  <td
+                    class="ContributionCalendar-label"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">Wednesday</span>
+                    <span
+                      aria-hidden="true"
+                      style="clip-path: None; position: absolute; bottom: -3px"
+                    >
+                      Wed
+                    </span>
+                  </td>
+                  <template for:each={wed} for:item="day">
+                    <template lwc:if={day.isValidDay}>
+                      <td
+                        tabindex="0"
+                        data-ix="0"
+                        key={day.date}
+                        aria-selected="false"
+                        aria-describedby="contribution-graph-legend-level-0"
+                        style="width: 10px"
+                        data-date={day.date}
+                        data-level={day.level}
+                        role="gridcell"
+                        data-view-component="true"
+                        class="ContributionCalendar-day"
+                        aria-labelledby="tooltip-6f1935d6-232b-47e2-818f-b9f3ff617ba0"
+                      ></td
+                    ></template>
+                    <template lwc:else>
+                      <td key={day.date}></td>
+                    </template>
+                  </template>
+                </tr>
+                <tr style="height: 10px">
+                  <td
+                    class="ContributionCalendar-label"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">Thursday</span>
+                    <span
+                      aria-hidden="true"
+                      style="
+                        clip-path: Circle(0);
+                        position: absolute;
+                        bottom: -3px;
+                      "
+                    >
+                      Thu
+                    </span>
+                  </td>
+
+                  <template for:each={thu} for:item="day">
+                    <template lwc:if={day.isValidDay}>
+                      <td
+                        tabindex="0"
+                        data-ix="0"
+                        key={day.date}
+                        aria-selected="false"
+                        aria-describedby="contribution-graph-legend-level-0"
+                        style="width: 10px"
+                        data-date={day.date}
+                        data-level={day.level}
+                        role="gridcell"
+                        data-view-component="true"
+                        class="ContributionCalendar-day"
+                        aria-labelledby="tooltip-6f1935d6-232b-47e2-818f-b9f3ff617ba0"
+                      ></td
+                    ></template>
+                    <template lwc:else>
+                      <td key={day.date}></td>
+                    </template>
+                  </template>
+                </tr>
+                <tr style="height: 10px">
+                  <td
+                    class="ContributionCalendar-label"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">Friday</span>
+                    <span
+                      aria-hidden="true"
+                      style="clip-path: None; position: absolute; bottom: -3px"
+                    >
+                      Fri
+                    </span>
+                  </td>
+
+                  <template for:each={fri} for:item="day">
+                    <template lwc:if={day.isValidDay}>
+                      <td
+                        tabindex="0"
+                        data-ix="0"
+                        key={day.date}
+                        aria-selected="false"
+                        aria-describedby="contribution-graph-legend-level-0"
+                        style="width: 10px"
+                        data-date={day.date}
+                        data-level={day.level}
+                        role="gridcell"
+                        data-view-component="true"
+                        class="ContributionCalendar-day"
+                        aria-labelledby="tooltip-6f1935d6-232b-47e2-818f-b9f3ff617ba0"
+                      ></td
+                    ></template>
+                    <template lwc:else>
+                      <td key={day.date}></td>
+                    </template>
+                  </template>
+                </tr>
+                <tr style="height: 10px">
+                  <td
+                    class="ContributionCalendar-label"
+                    style="position: relative"
+                  >
+                    <span class="sr-only">Saturday</span>
+                    <span
+                      aria-hidden="true"
+                      style="
+                        clip-path: Circle(0);
+                        position: absolute;
+                        bottom: -3px;
+                      "
+                    >
+                      Sat
+                    </span>
+                  </td>
+                  <template for:each={sat} for:item="day">
+                    <template lwc:if={day.isValidDay}>
+                      <td
+                        tabindex="0"
+                        data-ix="0"
+                        key={day.date}
+                        aria-selected="false"
+                        aria-describedby="contribution-graph-legend-level-0"
+                        style="width: 10px"
+                        data-date={day.date}
+                        data-level={day.level}
+                        role="gridcell"
+                        data-view-component="true"
+                        class="ContributionCalendar-day"
+                        aria-labelledby="tooltip-6f1935d6-232b-47e2-818f-b9f3ff617ba0"
+                      ></td
+                    ></template>
+                    <template lwc:else>
+                      <td key={day.date}></td>
+                    </template>
+                  </template>
+                </tr>
+              </tbody>
+            </table>
+            <div class="width-full f6 px-0 px-md-5 py-1">
+              <div
+                class="float-right color-fg-muted d-flex flex-items-center"
+                data-theme={selectedTheme}
+              >
+                <span data-view-component="true" class="mr-1">Less</span>
+                <div
+                  style="width: 10px; height: 10px"
+                  id="contribution-graph-legend-level-0"
+                  data-level="0"
+                  data-view-component="true"
+                  class="ContributionCalendar-day rounded-1 mr-1"
+                >
+                  <span class="sr-only">No contributions.</span>
+                </div>
+                <div
+                  style="width: 10px; height: 10px"
+                  id="contribution-graph-legend-level-1"
+                  data-level="1"
+                  data-view-component="true"
+                  class="ContributionCalendar-day rounded-1 mr-1"
+                >
+                  <span class="sr-only">Low contributions.</span>
+                </div>
+                <div
+                  style="width: 10px; height: 10px"
+                  id="contribution-graph-legend-level-2"
+                  data-level="2"
+                  data-view-component="true"
+                  class="ContributionCalendar-day rounded-1 mr-1"
+                >
+                  <span class="sr-only">Medium-low contributions.</span>
+                </div>
+                <div
+                  style="width: 10px; height: 10px"
+                  id="contribution-graph-legend-level-3"
+                  data-level="3"
+                  data-view-component="true"
+                  class="ContributionCalendar-day rounded-1 mr-1"
+                >
+                  <span class="sr-only">Medium-high contributions.</span>
+                </div>
+                <div
+                  style="width: 10px; height: 10px"
+                  id="contribution-graph-legend-level-4"
+                  data-level="4"
+                  data-view-component="true"
+                  class="ContributionCalendar-day rounded-1 mr-1"
+                >
+                  <span class="sr-only">High contributions.</span>
+                </div>
+                <span data-view-component="true">More</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div></template
+  >
+</template>

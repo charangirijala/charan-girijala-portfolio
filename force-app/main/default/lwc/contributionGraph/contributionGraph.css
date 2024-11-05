@@ -1,0 +1,286 @@
+:host {
+  --body-font-size: 14px;
+  --borderWidth-thin: max(1px, 0.0625rem);
+  --borderColor-default: #3d444d;
+  --borderRadius-medium: 0.375rem;
+  --fgColor-muted: #9198a1;
+  --h6-size: 12px;
+  --h4-size: 1rem;
+  --base-size-4: 4px;
+  --base-size-8: 8px;
+  --base-size-16: 16px;
+  --bgColor-black: #010409;
+  --slds-g-color-neutral-base-100: #010409;
+  --slds-g-shadow-outline-focus-1: #39d353;
+  --slds-g-color-neutral-base-95: #010409;
+  --slds-g-shadow-inset-focus-1: #39d353;
+  --slds-g-color-neutral-base-10: #f0f6fc;
+  --dxp-s-dropdown-text-color-hover: #151b23;
+  --fgColor-default: #f0f6fc;
+  --base-text-weight-normal: 400;
+  --color-calendar-graph-day-bg: #161b22;
+  --color-calendar-graph-day-border: rgba(27, 31, 35, 0.06);
+  --color-workflow-card-bg: var(--bgColor-muted);
+  --color-workflow-card-header-shadow: rgba(27, 31, 35, 0.04);
+  --color-bg-discussions-row-emoji-box: #57606a;
+  --color-notifications-row-read-bg: var(--bgColor-default);
+  --color-notifications-row-bg: var(--bgColor-muted);
+  --color-calendar-halloween-graph-day-L1-bg: #631c03;
+  --color-calendar-halloween-graph-day-L2-bg: #bd561d;
+  --color-calendar-halloween-graph-day-L3-bg: #fa7a18;
+  --color-calendar-halloween-graph-day-L4-bg: #fddf68;
+  --color-calendar-winter-graph-day-L1-bg: #0a3069;
+  --color-calendar-winter-graph-day-L2-bg: #0969da;
+  --color-calendar-winter-graph-day-L3-bg: #54aeff;
+  --color-calendar-winter-graph-day-L4-bg: #b6e3ff;
+  --color-calendar-graph-day-bg: #161b22;
+  --color-calendar-graph-day-border: rgba(27, 31, 35, 0.06);
+  --color-calendar-graph-day-L1-bg: #0e4429;
+  --color-calendar-graph-day-L2-bg: #006d32;
+  --color-calendar-graph-day-L3-bg: #26a641;
+  --color-calendar-graph-day-L4-bg: #39d353;
+  --color-calendar-graph-day-L1-border: rgba(255, 255, 255, 0.05);
+  --color-calendar-graph-day-L2-border: rgba(255, 255, 255, 0.05);
+  --color-calendar-graph-day-L3-border: rgba(255, 255, 255, 0.05);
+  --color-calendar-graph-day-L4-border: rgba(255, 255, 255, 0.05);
+  --color-user-mention-fg: var(--fgColor-attention);
+  --color-mktg-btn-shadow-outline: rgba(255, 255, 255, 0.25) 0 0 0 1px inset;
+  --color-marketing-icon-primary: #79c0ff;
+  --color-marketing-icon-secondary: #1f6feb;
+  --color-project-header-bg: #0d1117;
+  --color-project-sidebar-bg: #161b22;
+  --color-project-gradient-in: #161b22;
+  --color-project-gradient-out: rgba(22, 27, 34, 0);
+  --color-diff-blob-selected-line-highlight-mix-blend-mode: screen;
+  box-sizing: border-box;
+  background-color: var(--bgColor-black);
+}
+
+.total-contributions {
+  font-size: var(--h4-size);
+  margin-bottom: 0px !important;
+}
+
+.wrapper {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: var(--body-font-size);
+  line-height: 1.5;
+  color: var(--fgColor-default);
+  background-color: var(--bgColor-black);
+}
+
+.THIS .slds-form-element__label {
+  color: var(--fgColor-default) !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.pt-1 {
+  padding-top: var(--base-size-4) !important;
+}
+
+.mx-3 {
+  margin-right: var(--base-size-16) !important;
+  margin-left: var(--base-size-16) !important;
+}
+.height-full {
+  height: 100% !important;
+}
+.overflow-hidden {
+  overflow: hidden !important;
+}
+.flex-items-end {
+  align-items: flex-end !important;
+}
+.flex-column {
+  flex-direction: column !important;
+}
+
+.border {
+  border: var(--borderWidth-thin) solid var(--borderColor-default) !important;
+}
+
+.scroll {
+  max-width: 80vw;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.float-right {
+  float: right !important;
+}
+.flex-items-center {
+  align-items: center !important;
+}
+.color-fg-muted,
+.fgColor-muted {
+  color: var(--fgColor-muted) !important;
+}
+
+.f6 {
+  font-size: var(--h6-size) !important;
+}
+
+.mr-1 {
+  margin-right: var(--base-size-4) !important;
+}
+
+.Link--muted {
+  color: var(--fgColor-muted) !important;
+}
+.float-left {
+  float: left !important;
+}
+.py-1 {
+  padding-top: var(--base-size-4) !important;
+  padding-bottom: var(--base-size-4) !important;
+}
+.px-0 {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.width-full {
+  width: 100% !important;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.py-2 {
+  padding-top: var(--base-size-8) !important;
+  padding-bottom: var(--base-size-8) !important;
+}
+
+.graph-before-activity-overview {
+  border-top-left-radius: var(--borderRadius-medium);
+  border-top-right-radius: var(--borderRadius-medium);
+  width: fit-content;
+  background-color: var(--bgColor-black);
+}
+.wrapper {
+  background-color: var(--bgColor-black);
+}
+.ContributionCalendar-label {
+  padding: 0.125em 0.5em 0.125em 0;
+  font-size: 12px;
+  font-weight: var(--base-text-weight-normal);
+  color: var(--fgColor-default);
+  text-align: left;
+  fill: var(--fgColor-default);
+}
+
+.ContributionCalendar-day,
+.ContributionCalendar-day[data-level="0"] {
+  fill: var(--color-calendar-graph-day-bg);
+  shape-rendering: geometricPrecision;
+  background-color: var(--color-calendar-graph-day-bg);
+  border-radius: 2px;
+  outline: 1px solid var(--color-calendar-graph-day-border);
+  outline-offset: -1px;
+}
+
+[data-theme="halloween"] .ContributionCalendar-day[data-level="4"] {
+  fill: var(--color-calendar-halloween-graph-day-L4-bg);
+  background-color: var(--color-calendar-halloween-graph-day-L4-bg);
+  outline: 1px solid var(--color-calendar-graph-day-L4-border);
+}
+
+[data-theme="halloween"] .ContributionCalendar-day[data-level="3"] {
+  fill: var(--color-calendar-halloween-graph-day-L3-bg);
+  background-color: var(--color-calendar-halloween-graph-day-L3-bg);
+  outline: 1px solid var(--color-calendar-graph-day-L3-border);
+}
+
+[data-theme="halloween"] .ContributionCalendar-day[data-level="2"] {
+  fill: var(--color-calendar-halloween-graph-day-L2-bg);
+  background-color: var(--color-calendar-halloween-graph-day-L2-bg);
+  outline: 1px solid var(--color-calendar-graph-day-L2-border);
+}
+[data-theme="halloween"] .ContributionCalendar-day[data-level="1"] {
+  fill: var(--color-calendar-halloween-graph-day-L1-bg);
+  background-color: var(--color-calendar-halloween-graph-day-L1-bg);
+  outline: 1px solid var(--color-calendar-graph-day-L1-border);
+}
+
+[data-theme="winter"] .ContributionCalendar-day[data-level="4"] {
+  fill: var(--color-calendar-winter-graph-day-L4-bg);
+  background-color: var(--color-calendar-winter-graph-day-L4-bg);
+  outline: 1px solid var(--color-calendar-graph-day-L4-border);
+}
+
+[data-theme="winter"] .ContributionCalendar-day[data-level="3"] {
+  fill: var(--color-calendar-winter-graph-day-L3-bg);
+  background-color: var(--color-calendar-winter-graph-day-L3-bg);
+  outline: 1px solid var(--color-calendar-graph-day-L3-border);
+}
+
+[data-theme="winter"] .ContributionCalendar-day[data-level="2"] {
+  fill: var(--color-calendar-winter-graph-day-L2-bg);
+  background-color: var(--color-calendar-winter-graph-day-L2-bg);
+  outline: 1px solid var(--color-calendar-graph-day-L2-border);
+}
+[data-theme="winter"] .ContributionCalendar-day[data-level="1"] {
+  fill: var(--color-calendar-winter-graph-day-L1-bg);
+  background-color: var(--color-calendar-winter-graph-day-L1-bg);
+  outline: 1px solid var(--color-calendar-graph-day-L1-border);
+}
+
+[data-theme="default"] .ContributionCalendar-day[data-level="4"] {
+  fill: var(--color-calendar-graph-day-L4-bg);
+  background-color: var(--color-calendar-graph-day-L4-bg);
+  outline: 1px solid var(--color-calendar-graph-day-L4-border);
+}
+
+[data-theme="default"] .ContributionCalendar-day[data-level="2"] {
+  fill: var(--color-calendar-graph-day-L2-bg);
+  background-color: var(--color-calendar-graph-day-L2-bg);
+  outline: 1px solid var(--color-calendar-graph-day-L2-border);
+}
+
+[data-theme="default"] .ContributionCalendar-day[data-level="3"] {
+  fill: var(--color-calendar-graph-day-L3-bg);
+  background-color: var(--color-calendar-graph-day-L3-bg);
+  outline: 1px solid var(--color-calendar-graph-day-L3-border);
+}
+
+[data-theme="default"] .ContributionCalendar-day[data-level="1"] {
+  fill: var(--color-calendar-graph-day-L1-bg);
+  background-color: var(--color-calendar-graph-day-L1-bg);
+  outline: 1px solid var(--color-calendar-graph-day-L1-border);
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  unicode-bidi: isolate;
+  border-color: inherit;
+}
+
+.ContributionCalendar-grid {
+  width: max-content;
+  border-collapse: separate;
+  text-align: center;
+}
+table {
+  border-spacing: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: rect(0 0 0 0);
+  overflow-wrap: normal;
+  border: 0;
+}

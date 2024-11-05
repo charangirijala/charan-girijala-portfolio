@@ -11,7 +11,7 @@
   color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
 }
 .more-details-content {
-  color: lightcyan;
+  color: white;
   font-stretch: expanded;
   /* width: 80%; */
 }

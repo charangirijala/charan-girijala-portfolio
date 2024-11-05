@@ -21,4 +21,5 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(0, 0, 0, 0);
   -webkit-text-stroke: 0.03rem var(--bs-body-color);
+  font-weight: 100;
 }
